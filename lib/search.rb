@@ -1,7 +1,6 @@
 def index
   index = Ferret::I.new(analyzer: Ferret::Analysis::StandardAnalyzer.new([]))
 
-
   Dir.glob('sample_docs/*').each do |file|
     index << { filename: file, content: File.read(file).strip }
   end
